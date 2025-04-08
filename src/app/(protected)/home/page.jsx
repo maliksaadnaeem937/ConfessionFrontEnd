@@ -9,20 +9,21 @@ export default async function Home() {
   const accessToken = cookieStore.get("accessToken");
   const refreshToken = cookieStore.get("refreshToken");
   try {
-  
     const { data: response } = await axios.get(
       `${process.env.NEXT_PUBLIC_BACKEND_CONFESSION_URL}/home`,
       {
         headers: {
           // Forward the cookie manually to your backend API
-          Cookie: `accessToken=${accessToken?.value||""}; refreshToken=${refreshToken?.value||""}`,
+          Cookie: `accessToken=${accessToken?.value || ""}; refreshToken=${
+            refreshToken?.value || ""
+          }`,
         },
       }
     );
     const { data } = response;
     confessionsList = data;
   } catch (e) {
-    if (e.status === 301) {
+    if (e.response?.status === 301) {
       redirect("/register");
     }
   }

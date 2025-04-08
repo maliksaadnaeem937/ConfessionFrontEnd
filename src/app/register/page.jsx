@@ -22,7 +22,7 @@ export default async function RegisterPage() {
       }
     );
   } catch (err) {
-    if (err.status === 301) {
+    if (err.response?.status === 301) {
       redirect("/home");
     } else {
     }
