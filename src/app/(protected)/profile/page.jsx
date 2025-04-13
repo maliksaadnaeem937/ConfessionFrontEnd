@@ -1,6 +1,7 @@
 import ConfessionHome from "@/app/components/ConfessionHome";
 import axios from "axios";
 import { redirect } from "next/navigation";
+export const dynamic = "force-dynamic"; // 👈 Ensures SSR, not static
 
 export default async function Profile() {
   try {

@@ -6,6 +6,7 @@ import { toast } from "react-hot-toast";
 import { Mail, ArrowRight, Loader2 } from "lucide-react";
 import Link from "next/link";
 
+
 export default function ResendOTPPage() {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
