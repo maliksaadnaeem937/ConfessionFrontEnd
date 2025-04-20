@@ -2,8 +2,7 @@ import axios from "axios";
 import { redirect } from "next/navigation";
 import ConfessionHome from "@/app/components/ConfessionHome";
 import { cookies } from "next/headers";
-export const dynamic = "force-dynamic"; // 👈 Ensures SSR, not static
-
+export const dynamic = "force-dynamic";
 export default async function Home() {
   let confessionsList = [];
   const cookieStore = await cookies();
