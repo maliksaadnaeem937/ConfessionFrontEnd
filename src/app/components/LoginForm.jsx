@@ -34,8 +34,7 @@ export default function LoginForm() {
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/login`,
         {
           ...form,
-        },
-        { withCredentials: true }
+        }
       );
 
       // Assuming login is successful

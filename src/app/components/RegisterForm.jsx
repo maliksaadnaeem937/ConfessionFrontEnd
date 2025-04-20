@@ -36,8 +36,7 @@ export default function RegisterForm() {
     try {
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/register`,
-        { ...form },
-        { withCredentials: true }
+        { ...form }
       );
 
       toast.success(
